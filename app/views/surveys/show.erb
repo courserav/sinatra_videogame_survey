@@ -1,0 +1,43 @@
+<div>
+  <h1>View Your Survey Results</h1>
+
+  <h2>Console: <%= @survey.console %></h2>
+  <h2>Genre: <%= @survey.genre %></h2>
+  <h2>Based on your survey results, we recommend playing:</h2>
+
+  <% if @survey.console == "Switch" && @survey.genre == "Action/Adventure" %>
+    <p>Super Mario Odyssey</p>
+  <% end %>
+  <% if @survey.console == "Switch" && @survey.genre == "Fighting" %>
+    <p>Super Smash Brothers Ultimate</p>
+  <% end %>
+  <% if @survey.console == "Switch" && @survey.genre == "Survival Horror" %>
+    <p>The Sinking City</p>
+  <% end %>
+  <% if @survey.console == "Xbox" && @survey.genre == "Action/Adventure" %>
+    <p>Rise of the Tomb Raider</p>
+  <% end %>
+  <% if @survey.console == "Xbox" && @survey.genre == "Fighting" %>
+    <p>Tekken 7</p>
+  <% end %>
+  <% if @survey.console == "Xbox" && @survey.genre == "Survival Horror" %>
+    <p>Resident Evil 7</p>
+  <% end %>
+  <% if @survey.console == "Playstation" && @survey.genre == "Action/Adventure" %>
+    <p>Horizon Zero Dawn</p>
+  <% end %>
+  <% if @survey.console == "Playstation" && @survey.genre == "Fighting" %>
+    <p>Street Fighter V</p>
+  <% end %>
+  <% if @survey.console == "Playstation" && @survey.genre == "Survival Horror" %>
+    <p>The Last of Us Part II</p>
+  <% end %>
+
+
+  <h4><a href="/surveys/<%= @survey.id %>/edit">Edit Survey</a></h4>
+
+    <form method="post" action="/surveys/<%= @survey.id %>/delete">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete Survey">
+    </form>
+</div>

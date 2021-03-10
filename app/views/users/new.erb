@@ -1,0 +1,15 @@
+<% unless locals.empty? %>
+    <%= message %>
+<% end %>
+
+<div>
+    <h1> Make Account: </h1>
+
+    <form method="post" action:"/signup">
+        <label>Username:</label><br>
+        <input id="username" type="text" name="username"><br><br>
+        <label>Password:</label><br>
+        <input id="password" type="password" name="password"><br><br>
+        <input type="submit" value="Create User">
+    </form>
+</div>

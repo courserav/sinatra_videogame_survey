@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+
+<body>
+    <div>
+        <a button type="button" class="navbtn btn btn-default" href="/surveys">Other Surveys</a>
+        <a button type="button" class="navbtn btn btn-default" href="/surveys/new">Take New Survey</a>
+        <% if logged_in? %>
+            <a button type="button" class="navbtn btn btn-default" href="/users/<%= current_user.slug %>">User Info</a>
+            <a button type="button" class="navbtn btn btn-default" href="/logout">Log Out</a>
+        <% else %>
+            <a button type="button" class="navbtn btn btn-default" href="/login">Log In</a>
+            <a button type="button" class="navbtn btn btn-default" href="/signup">Sign Up</a>
+        <% end %>
+
+        <%= yield %>
+    </div>
+</body>
+</html>

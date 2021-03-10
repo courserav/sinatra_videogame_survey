@@ -1,0 +1,8 @@
+<div>
+    <h2>Welcome <%= @user.username %></h2><br>
+    <h3>Here are your videogame surveys:</h3>
+    <% @user.surveys.each do |survey| %><br>
+        <h4><%= survey.console %>, <%= survey.genre %></h4>
+        <p><a href="/surveys/<%= survey.id %>">Survey Details</a></p>
+    <% end %>
+</div>
